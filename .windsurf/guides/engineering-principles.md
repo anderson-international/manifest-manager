@@ -3,9 +3,8 @@
 Purpose: reusable, cross-project constraints that improve reliability, readability, and change velocity.
 
 ## Fail-fast and No-Fallback Data Rule
-- Always surface real errors immediately. Do not silently fall back to partial or stale data.
-- Do not mask backend failures with placeholder success states.
-- Prefer explicit error UX and logging over optimistic guesses.
+- Fail-fast on unrecoverable errors; never use fallback or placeholder data.
+- Surface errors to callers and log with structure; avoid any swallowing.
 
 ## Thin Controller Pattern
 - Routes/controllers: HTTP only (parse, validate, status codes, map responses).

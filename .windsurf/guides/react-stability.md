@@ -21,7 +21,3 @@ function Example({ data }: { data: number[] }) {
   return <button style={style} onClick={onClick}>{total}</button>
 }
 ```
-## Fail-fast and No-Fallback Data Rule
-- Always surface real errors immediately. Do not silently fall back to partial or stale data.
-- Do not mask backend failures with placeholder success states.
-- Prefer explicit error UX and logging over optimistic guesses.

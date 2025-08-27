@@ -4,7 +4,6 @@ A provider-agnostic strategy combining fail-fast principles with thoughtful retr
 
 ## Decision Principles
 - Fail-fast for client/auth/business logic errors (4xx).
-- Always surface real errors immediately. Do not silently fall back to partial or stale data.
 - Retry transient failures only (5xx/429/timeouts/network) with backoff and jitter.
 - Cap attempts (3–5), require idempotency, and use a circuit breaker.
 
