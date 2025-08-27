@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2025-08-25T19:04:29.242Z",
+  "args": [],
+  "options": {
+    "concurrency": 8,
+    "porcelainMode": false,
+    "noAutofix": false,
+    "debugMode": false,
+    "tsScope": "auto",
+    "resolvedTsconfigPath": "C:\\Users\\Jonny\\Code\\shopify-shipping\\.windsurf\\review\\output\\.tmp\\tsc\\tsconfig.runtime.json",
+    "skipTsc": false
+  },
+  "summary": {
+    "status": "pass",
+    "noViolations": true,
+    "message": "No violations detected. No further action required.",
+    "totalMs": 7256,
+    "totalHuman": "0m 07s"
+  },
+  "results": []
+}
