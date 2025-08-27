@@ -12,6 +12,16 @@ This workflow establishes conversation goals, loads critical context files and s
 - Set the project working directory
 /run context-critical
 
+## Step 1b - Load Core Engineering Guides (Always)
+These short guides are always relevant and should be loaded for any task.
+/run load-core-guides
+
+## Step 1c - Load Task-Specific Guides (Choose one or both as needed)
+- If the task involves API/server/auth/networking:
+  /run load-api-guides
+- If the task involves UI/React/components/hooks:
+  /run load-ui-guides
+
 ### Step 2: Establish Goal(s)
 **AI ACTION REQUIRED**: 
  - Establish the goal of this conversation.
