@@ -26,6 +26,11 @@ cmd /c npm run --prefix .windsurf\review review:repo -- --help
 /run context-cmd
 /run context-review
 
+## Guide loader hints (choose based on task)
+- If working on API/server/auth/networking tasks: consider running `/run load-api-guides`.
+- If working on UI/React/components/hooks tasks: consider running `/run load-ui-guides`.
+- Core engineering guidance can be loaded anytime with `/run load-core-guides`.
+
 ## Load Current Schema Index
 ```bash
 cmd /c node .windsurf\tools\schema-query.js --index
