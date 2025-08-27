@@ -16,32 +16,33 @@ Repository source (upstream of this subtree):
 - Remote name: `windsurf_subtree`
 - Remote URL: `https://github.com/anderson-international/.windsurf.git`
 
+## Quick start
+
+- New project (no `.windsurf/` yet):
+  - Bootstrap manually (commands in Section 1 below)
+  - After bootstrap, workflows become available; you can run `/subtree-npm` to install local npm deps
+
+- Existing project (already has `.windsurf/`):
+  - Run workflow: `/subtree-pull` (Update existing installation)
+
 ## 1) Getting started in a new project (no workflows yet)
 
-If your project does not yet have `.windsurf/`, or you want to rebootstrap it:
-
-1. Add the subtree remote
+Manual bootstrap:
 ```cmd
 cmd /c git remote add windsurf_subtree https://github.com/anderson-international/.windsurf.git
-```
-
-2. Ensure your working tree is clean and `.windsurf/` is absent (remove if necessary)
-```cmd
-cmd /c rmdir /s /q .windsurf
-cmd /c git add -A
-cmd /c git commit -m "Remove local .windsurf to prepare for subtree"
-```
-
-3. Add the subtree from upstream main (use --squash)
-```cmd
 cmd /c git fetch windsurf_subtree
 cmd /c git subtree add --prefix=.windsurf windsurf_subtree main --squash
+cmd /c npm --prefix .windsurf\review ci
 ```
 
-4. Quick verification
+Quick verification:
 ```cmd
 cmd /c node .windsurf\tools\schema-query.js --help
 ```
+
+After bootstrap:
+- Workflows are now available under `.windsurf/workflows/`.
+- You can run `/subtree-npm` if you didn’t already run the npm install step above.
 
 ## 2) Everyday use with workflows
 
@@ -49,20 +50,12 @@ Once the project contains `.windsurf/workflows/`, use these:
 
 - Subtree push (publish your local `.windsurf/` improvements upstream)
   - See: `.windsurf/workflows/subtree-push.md`
-  - Summary of what it runs:
-    ```cmd
-    cmd /c git subtree split --prefix=.windsurf -b windsurf-split
-    cmd /c git push windsurf_subtree windsurf-split:main
-    cmd /c git branch -D windsurf-split
-    ```
+  - Summary:
+    - Splits `.windsurf/` into a branch and pushes it to the subtree repo
 
 - Subtree pull (bring down latest upstream improvements into this project)
   - See: `.windsurf/workflows/subtree-pull.md`
-  - Summary of what it runs:
-    ```cmd
-    cmd /c git fetch windsurf_subtree
-    cmd /c git subtree pull --prefix=.windsurf windsurf_subtree main --squash
-    ```
+  - Supports both Bootstrap (first-time) and Update (existing installation)
 
 Notes and troubleshooting:
 - Conflicts, if any, will be limited to files under `.windsurf/`. Resolve, then `cmd /c git add -A` and `cmd /c git commit`.

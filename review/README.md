@@ -9,20 +9,27 @@ Self-contained code review tooling located in `.windsurf/review/`. All dependenc
 - Analyzer writes report to: `.windsurf/review/output/code-review-results.json`
 - Policy: ESLint warnings are treated as failures (`--max-warnings=0`)
 
-## Running (Windows cmd)
-Use these npm scripts from `.windsurf/review/`:
+## Quick start
+For first-time setup, see repo `README.md` → Quick start:
+- Run workflow: `/subtree-pull` (Bootstrap), then `/subtree-npm`.
 
+## Running (Windows cmd)
+From repo root (preferred, using `--prefix`):
 ```cmd
-cmd /c npm run review:porcelain  // Changed TS/TSX files only (git porcelain)
-cmd /c npm run review:repo       // Full project scan under app/, components/, lib/, hooks/, types/, pages/
-cmd /c npm run review:debug      // Full scan with debug output and report-all
-cmd /c npm run tsc               // TypeScript diagnostics only (noEmit)
-cmd /c npm run lint:repo         // ESLint only, repo-wide
+cmd /c npm --prefix .windsurf\review run review:porcelain  // Changed TS/TSX files only (git porcelain)
+cmd /c npm --prefix .windsurf\review run review:repo       // Full project scan under app/, components/, lib/, hooks/, types/, pages/
+cmd /c npm --prefix .windsurf\review run review:debug      // Full scan with debug output and report-all
+cmd /c npm --prefix .windsurf\review run tsc               // TypeScript diagnostics only (noEmit)
+cmd /c npm --prefix .windsurf\review run lint:repo         // ESLint only, repo-wide
 ```
 
-From repo root, you can also use `--prefix`:
+From inside `.windsurf/review/` (alternative):
 ```cmd
-cmd /c npm --prefix .windsurf\review run review:repo -- --help
+cmd /c npm run review:porcelain
+cmd /c npm run review:repo
+cmd /c npm run review:debug
+cmd /c npm run tsc
+cmd /c npm run lint:repo
 ```
 
 ### Troubleshooting
@@ -32,11 +39,13 @@ cmd /c npm --prefix .windsurf\review run review:repo -- --help
     ```cmd
     cmd /c npm --prefix .windsurf\review run review:porcelain
     ```
-
-If dependencies are missing, install locally:
-```cmd
-cmd /c npm ci
-```
+  
+- **Dependencies missing**
+  - From repo root:
+    ```cmd
+    cmd /c npm --prefix .windsurf\review ci
+    ```
+  - Or run workflow: `/subtree-npm`
 
 ## ESLint cache
 ESLint caching is enabled for both batch and per-file runs to speed up repeat analyses.
