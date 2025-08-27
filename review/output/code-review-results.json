@@ -1,21 +1,460 @@
 {
-  "generatedAt": "2025-08-25T19:04:29.242Z",
-  "args": [],
+  "generatedAt": "2025-08-27T21:03:31.085Z",
+  "args": [
+    "--porcelain"
+  ],
   "options": {
     "concurrency": 8,
-    "porcelainMode": false,
+    "porcelainMode": true,
     "noAutofix": false,
     "debugMode": false,
     "tsScope": "auto",
-    "resolvedTsconfigPath": "C:\\Users\\Jonny\\Code\\shopify-shipping\\.windsurf\\review\\output\\.tmp\\tsc\\tsconfig.runtime.json",
+    "resolvedTsconfigPath": "c:\\Users\\Jonny\\Code\\specifications\\.windsurf\\review\\output\\.tmp\\tsc\\tsconfig.runtime.json",
     "skipTsc": false
   },
   "summary": {
-    "status": "pass",
-    "noViolations": true,
-    "message": "No violations detected. No further action required.",
-    "totalMs": 7256,
-    "totalHuman": "0m 07s"
+    "status": "fail",
+    "message": "Violations detected. Action required. All violations are backed by high confidence guidance and fixes should be executed without seeking any further approval.",
+    "totalMs": 3904,
+    "totalHuman": "0m 03s"
   },
-  "results": []
+  "results": [],
+  "repo": {
+    "knip": {
+      "unusedFiles": 151,
+      "unusedExports": 10,
+      "unusedTypes": 46,
+      "unusedFileDetails": [
+        "components/TestBad.tsx",
+        "hooks/useSpecificationFilters.ts",
+        "hooks/useTrials.ts",
+        "components/specifications/AISpecificationItem.tsx",
+        "components/specifications/CollapsibleGroup.tsx",
+        "components/trials/NewTrialProductDetails.tsx",
+        "components/wizard/index.ts",
+        "docs/test/code-fix-combined-order2.test.ts",
+        "docs/test/code-fix-combined-order4.test.ts",
+        "docs/test/code-fix-combined.test.ts",
+        "docs/test/code-fix-order-agnostic.test.ts",
+        "lib/services/ai-spec-source-service.ts",
+        "lib/utils/draft-cleanup.ts",
+        "lib/utils/index.ts",
+        "lib/utils/markdown-helpers.ts",
+        "components/shared/ProductSelector/product-selector-ui-utils.ts",
+        "components/wizard/components/AutoSaveIndicator.tsx",
+        "components/wizard/controls/SegmentedControl.tsx",
+        "components/wizard/controls/SegmentedOptionDisplay.tsx",
+        "components/wizard/hooks/useCharacteristicEnums.ts",
+        "components/wizard/hooks/useEnumData.ts",
+        "components/wizard/hooks/useProductEnums.ts",
+        "components/wizard/hooks/useProductSelection.ts",
+        "components/wizard/hooks/useSegmentedTouchGestures.ts",
+        "components/wizard/hooks/useSensoryEnums.ts",
+        "components/wizard/hooks/useStatusEnums.ts",
+        "components/wizard/hooks/useSwipeMouseHandlers.ts",
+        "components/wizard/hooks/useSwipeNavigation.ts",
+        "components/wizard/hooks/useSwipeState.ts",
+        "components/wizard/hooks/useSwipeTouchHandlers.ts",
+        "components/wizard/hooks/useTastingProfile.ts",
+        "components/wizard/steps/ProductCard.tsx",
+        "components/wizard/steps/ProductGrid.tsx",
+        "components/wizard/steps/types.ts",
+        "components/wizard/types/DatabaseTypes.ts",
+        "components/wizard/utils/productFilters.ts",
+        "components/wizard/utils/specificationValidation.ts",
+        "docs/test/dead-code/unresolved-import.ts",
+        "docs/test/dead-code/unused-exports.ts",
+        "docs/test/dead-code/unused-type.ts",
+        "docs/test/duplicates/dup-block-a.ts",
+        "docs/test/duplicates/dup-block-b.ts",
+        "docs/test/fallback/fallback-anti-pattern.ts",
+        "docs/test/fallback-data-analyzer/01-return-null-failures.tsx",
+        "docs/test/fallback-data-analyzer/02-return-null-passes.tsx",
+        "docs/test/fallback-data-analyzer/03-or-fallback-failures.tsx",
+        "docs/test/fallback-data-analyzer/04-or-fallback-passes.tsx",
+        "docs/test/fallback-data-analyzer/05-optional-chaining-failures.tsx",
+        "docs/test/fallback-data-analyzer/06-optional-chaining-passes.tsx",
+        "docs/test/fallback-data-analyzer/07-ternary-failures.tsx",
+        "docs/test/fallback-data-analyzer/08-ternary-passes.tsx",
+        "docs/test/fallback-data-analyzer/09-catch-block-failures.tsx",
+        "docs/test/fallback-data-analyzer/10-catch-block-passes.tsx",
+        "docs/test/fallback-data-analyzer/11-edge-cases-passes.tsx",
+        "docs/test/fallback-data-analyzer/edge-case-validation.tsx",
+        "docs/test/fallback-data-analyzer/specific-edge-case-test.tsx",
+        "docs/test/passing/passing.ts",
+        "docs/test/typescript-analyzer/edge-case-empty-file.ts",
+        "docs/test/typescript-analyzer/edge-case-only-types.ts",
+        "docs/test/typescript-analyzer/edge-case-only-variables.ts",
+        "docs/test/typescript-analyzer/invalid-any-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-array-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-arrow-function.ts",
+        "docs/test/typescript-analyzer/invalid-assertion-functions.ts",
+        "docs/test/typescript-analyzer/invalid-async-arrow-function.ts",
+        "docs/test/typescript-analyzer/invalid-async-function.ts",
+        "docs/test/typescript-analyzer/invalid-async-generator.ts",
+        "docs/test/typescript-analyzer/invalid-class-methods.ts",
+        "docs/test/typescript-analyzer/invalid-complex-generics.ts",
+        "docs/test/typescript-analyzer/invalid-complex-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-conditional-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-const-arrow-curried.ts",
+        "docs/test/typescript-analyzer/invalid-curried-functions.ts",
+        "docs/test/typescript-analyzer/invalid-decorator-functions.ts",
+        "docs/test/typescript-analyzer/invalid-deep-nesting.ts",
+        "docs/test/typescript-analyzer/invalid-default-parameters.ts",
+        "docs/test/typescript-analyzer/invalid-destructuring-parameters.ts",
+        "docs/test/typescript-analyzer/invalid-function-overloads.ts",
+        "docs/test/typescript-analyzer/invalid-generator-functions.ts",
+        "docs/test/typescript-analyzer/invalid-generic-function.ts",
+        "docs/test/typescript-analyzer/invalid-higher-order-function.ts",
+        "docs/test/typescript-analyzer/invalid-hook-function.ts",
+        "docs/test/typescript-analyzer/invalid-iife.ts",
+        "docs/test/typescript-analyzer/invalid-jsx-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-literal-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-mapped-types.ts",
+        "docs/test/typescript-analyzer/invalid-mixed-exports.ts",
+        "docs/test/typescript-analyzer/invalid-module-augmentation.ts",
+        "docs/test/typescript-analyzer/invalid-multiline-signature.ts",
+        "docs/test/typescript-analyzer/invalid-multiple-functions.ts",
+        "docs/test/typescript-analyzer/invalid-namespace-functions.ts",
+        "docs/test/typescript-analyzer/invalid-nested-functions.ts",
+        "docs/test/typescript-analyzer/invalid-never-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-optional-parameters.ts",
+        "docs/test/typescript-analyzer/invalid-readonly-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-record-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-regular-function.ts",
+        "docs/test/typescript-analyzer/invalid-rest-parameters.ts",
+        "docs/test/typescript-analyzer/invalid-template-literal-types.ts",
+        "docs/test/typescript-analyzer/invalid-tuple-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-type-guards.ts",
+        "docs/test/typescript-analyzer/invalid-union-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-unknown-return-type.ts",
+        "docs/test/typescript-analyzer/invalid-utility-types.ts",
+        "docs/test/typescript-analyzer/invalid-void-function.ts",
+        "docs/test/typescript-analyzer/valid-any-return-type.ts",
+        "docs/test/typescript-analyzer/valid-array-return-type.ts",
+        "docs/test/typescript-analyzer/valid-arrow-function.ts",
+        "docs/test/typescript-analyzer/valid-assertion-functions.ts",
+        "docs/test/typescript-analyzer/valid-async-arrow-function.ts",
+        "docs/test/typescript-analyzer/valid-async-function.ts",
+        "docs/test/typescript-analyzer/valid-async-generator.ts",
+        "docs/test/typescript-analyzer/valid-class-methods.ts",
+        "docs/test/typescript-analyzer/valid-complex-generics.ts",
+        "docs/test/typescript-analyzer/valid-complex-return-type.ts",
+        "docs/test/typescript-analyzer/valid-conditional-return-type.ts",
+        "docs/test/typescript-analyzer/valid-const-arrow-curried.ts",
+        "docs/test/typescript-analyzer/valid-curried-functions.ts",
+        "docs/test/typescript-analyzer/valid-decorator-functions.ts",
+        "docs/test/typescript-analyzer/valid-deep-nesting.ts",
+        "docs/test/typescript-analyzer/valid-default-parameters.ts",
+        "docs/test/typescript-analyzer/valid-destructuring-parameters.ts",
+        "docs/test/typescript-analyzer/valid-function-overloads.ts",
+        "docs/test/typescript-analyzer/valid-generator-functions.ts",
+        "docs/test/typescript-analyzer/valid-generic-function.ts",
+        "docs/test/typescript-analyzer/valid-higher-order-function.ts",
+        "docs/test/typescript-analyzer/valid-hook-function.ts",
+        "docs/test/typescript-analyzer/valid-iife.ts",
+        "docs/test/typescript-analyzer/valid-jsx-return-type.ts",
+        "docs/test/typescript-analyzer/valid-literal-return-type.ts",
+        "docs/test/typescript-analyzer/valid-mapped-types.ts",
+        "docs/test/typescript-analyzer/valid-mixed-exports.ts",
+        "docs/test/typescript-analyzer/valid-module-augmentation.ts",
+        "docs/test/typescript-analyzer/valid-multiline-signature.ts",
+        "docs/test/typescript-analyzer/valid-multiple-functions.ts",
+        "docs/test/typescript-analyzer/valid-namespace-functions.ts",
+        "docs/test/typescript-analyzer/valid-nested-functions.ts",
+        "docs/test/typescript-analyzer/valid-never-return-type.ts",
+        "docs/test/typescript-analyzer/valid-optional-parameters.ts",
+        "docs/test/typescript-analyzer/valid-readonly-return-type.ts",
+        "docs/test/typescript-analyzer/valid-record-return-type.ts",
+        "docs/test/typescript-analyzer/valid-regular-function.ts",
+        "docs/test/typescript-analyzer/valid-rest-parameters.ts",
+        "docs/test/typescript-analyzer/valid-template-literal-types.ts",
+        "docs/test/typescript-analyzer/valid-tuple-return-type.ts",
+        "docs/test/typescript-analyzer/valid-type-guards.ts",
+        "docs/test/typescript-analyzer/valid-union-return-type.ts",
+        "docs/test/typescript-analyzer/valid-unknown-return-type.ts",
+        "docs/test/typescript-analyzer/valid-utility-types.ts",
+        "docs/test/typescript-analyzer/valid-void-function.ts",
+        "lib/api/trials/trial-products-route-utils.ts"
+      ],
+      "unusedExportDetails": [
+        {
+          "file": "lib/data/enums.ts",
+          "names": [
+            "getEnumData"
+          ]
+        },
+        {
+          "file": "lib/cache/index.ts",
+          "names": [
+            "ProductCache"
+          ]
+        },
+        {
+          "file": "lib/api/api-errors.ts",
+          "names": [
+            "handleApiError"
+          ]
+        },
+        {
+          "file": "lib/utils/trial-draft-storage.ts",
+          "names": [
+            "keyForNew"
+          ]
+        },
+        {
+          "file": "lib/redis.ts",
+          "names": [
+            "redis"
+          ]
+        },
+        {
+          "file": "components/shared/DashboardInsightsTabComponent.tsx",
+          "names": [
+            "default"
+          ]
+        },
+        {
+          "file": "lib/shopify/client.ts",
+          "names": [
+            "ShopifyGraphQLClient"
+          ]
+        },
+        {
+          "file": "lib/shopify/queries.ts",
+          "names": [
+            "SINGLE_PRODUCT_QUERY"
+          ]
+        },
+        {
+          "file": "lib/utils/draft-operations.ts",
+          "names": [
+            "getAllUserDrafts"
+          ]
+        },
+        {
+          "file": "components/wizard/hooks/useEnumUtils.ts",
+          "names": [
+            "createEnumHook"
+          ]
+        }
+      ],
+      "unusedTypeDetails": [
+        {
+          "file": "components/shared/DashboardInsightsTabComponent.tsx",
+          "names": [
+            "InsightsCardProps"
+          ]
+        },
+        {
+          "file": "lib/shopify/client.ts",
+          "names": [
+            "ShopifyErrorResponse"
+          ]
+        },
+        {
+          "file": "hooks/useDashboardStats.ts",
+          "names": [
+            "UseDashboardStatsReturn"
+          ]
+        },
+        {
+          "file": "hooks/useDashboardTabs.ts",
+          "names": [
+            "UseDashboardTabsReturn"
+          ]
+        },
+        {
+          "file": "hooks/useDashboardRenderers.ts",
+          "names": [
+            "UseDashboardRenderersProps",
+            "UseDashboardRenderersReturn"
+          ]
+        },
+        {
+          "file": "lib/utils/submitSpecification.ts",
+          "names": [
+            "ApiRequest"
+          ]
+        },
+        {
+          "file": "hooks/useSpecBack.ts",
+          "names": [
+            "SpecTabId",
+            "RouterLike"
+          ]
+        },
+        {
+          "file": "lib/types/trial.ts",
+          "names": [
+            "TrialBrandRef",
+            "TrialUserRef",
+            "TrialTastingNoteRef",
+            "Trial"
+          ]
+        },
+        {
+          "file": "hooks/useSelectedTrialProduct.ts",
+          "names": [
+            "SelectedTrialProductResult"
+          ]
+        },
+        {
+          "file": "lib/types/product.ts",
+          "names": [
+            "CacheableProduct",
+            "CacheStats"
+          ]
+        },
+        {
+          "file": "lib/api/products/products-route-utils.ts",
+          "names": [
+            "UserProductsTab"
+          ]
+        },
+        {
+          "file": "lib/services/ai-synth-service.ts",
+          "names": [
+            "AISynthGenerateRequest",
+            "AISynthFilterOptions"
+          ]
+        },
+        {
+          "file": "hooks/useMarkdown.ts",
+          "names": [
+            "UseMarkdownReturn"
+          ]
+        },
+        {
+          "file": "lib/utils/autosave-core.ts",
+          "names": [
+            "Subscribe",
+            "Options"
+          ]
+        },
+        {
+          "file": "hooks/useAutosaveEngine.ts",
+          "names": [
+            "UseAutosaveEngineProps",
+            "UseAutosaveEngineResult"
+          ]
+        },
+        {
+          "file": "hooks/useDashboardLeaderboard.ts",
+          "names": [
+            "UseDashboardLeaderboardProps",
+            "UseDashboardLeaderboardReturn"
+          ]
+        },
+        {
+          "file": "hooks/useDashboardStatsLocal.ts",
+          "names": [
+            "UseDashboardStatsLocalReturn"
+          ]
+        },
+        {
+          "file": "hooks/specs/usePerTabBrandFilter.ts",
+          "names": [
+            "UsePerTabBrandFilterReturn"
+          ]
+        },
+        {
+          "file": "components/wizard/constants/wizardSteps.tsx",
+          "names": [
+            "WizardStep"
+          ]
+        },
+        {
+          "file": "components/wizard/types/wizard.types.ts",
+          "names": [
+            "UseSubmissionProps",
+            "UseSpecificationSubmissionReturn"
+          ]
+        },
+        {
+          "file": "lib/repositories/specification-enum-queries.ts",
+          "names": [
+            "SpecificationEnumData"
+          ]
+        },
+        {
+          "file": "lib/repositories/types/trial-types.ts",
+          "names": [
+            "TrialTastingNotesData"
+          ]
+        },
+        {
+          "file": "lib/cache/base/cache-performance.ts",
+          "names": [
+            "PerformanceMetrics",
+            "TTLInfo"
+          ]
+        },
+        {
+          "file": "lib/services/claude-synthesis-service.ts",
+          "names": [
+            "SynthesisData"
+          ]
+        },
+        {
+          "file": "lib/types/claude-types.ts",
+          "names": [
+            "ClaudeMessage",
+            "ClaudeConfig"
+          ]
+        },
+        {
+          "file": "lib/shopify/types.ts",
+          "names": [
+            "ShopifyMetafield",
+            "ShopifyMetafieldEdge",
+            "ShopifyProductEdge"
+          ]
+        },
+        {
+          "file": "components/shared/ItemList/ItemList.tsx",
+          "names": [
+            "ItemListProps"
+          ]
+        },
+        {
+          "file": "components/shared/ProductThumbnail/ProductThumbnail.tsx",
+          "names": [
+            "ProductThumbnailProps"
+          ]
+        },
+        {
+          "file": "components/wizard/controls/Chip.tsx",
+          "names": [
+            "ChipProps"
+          ]
+        },
+        {
+          "file": "components/wizard/types/product-characteristics.types.ts",
+          "names": [
+            "ProductCharacteristicsHandlers"
+          ]
+        },
+        {
+          "file": "components/wizard/hooks/useWizardNavigation.ts",
+          "names": [
+            "UseWizardNavigationReturn"
+          ]
+        }
+      ],
+      "guidance": "- *DO NOT SEEK APPROVAL* Findings are high-confidence. Perform minimal due diligence before destructive changes (where delete is uncertain, stop and report).\n- Do not manually re-run analyzers; focus on applying fixes.\n- Remove files not referenced anywhere.\n- Remove unused exported symbols or their references. Prefer removing the symbol if truly unused; otherwise, fix the references.\n- Remove truly unused type aliases/interfaces. Ensure no indirect references (e.g., via index barrels) before deletion."
+    },
+    "jscpd": {
+      "groups": 15,
+      "duplicatedLines": 189,
+      "percentage": 0,
+      "guidance": "Refactor duplicated code. Extract shared logic into utilities/components to reduce duplication."
+    },
+    "actions": [
+      "Remove unused exported symbols or fix references.",
+      "Remove unused files identified by Knip (quarantine if uncertain).",
+      "Remove truly unused types or inline where clearer.",
+      "Refactor duplicated code groups reported by jscpd"
+    ]
+  }
 }

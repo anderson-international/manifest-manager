@@ -20,10 +20,6 @@ Avoid: Exceeding file size limits, React infinite loops, Missing context
 
 **When exceeded**: Extract to custom hooks, services, repositories, or separate type files. Minimise all comments.
 
-**Immediate Verification Required**: After creating or modifying any file, immediately run:
-- `cmd /c node .windsurf\review\code-review.js [filename]` to verify size and code quality
-- `cmd /c node .windsurf\review\code-review.js [filepath]` for targeted analysis
-
 ## Thin Controller Pattern
 
 - Route files: Pure HTTP handling (request/response, validation, status codes)

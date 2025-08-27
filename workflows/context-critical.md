@@ -21,15 +21,12 @@ cmd /c node .windsurf\tools\file-delete.js --help
 cmd /c npm run --prefix .windsurf\review review:repo -- --help
 ```
 
-Note: We invoke the analyzer via the self-contained `.windsurf/review/` package to keep it portable across projects and ensure flags (like `--help`) are passed directly to the inner script.
-
-## SECOND: Run critical workflows
+## Run critical workflows
 **Execute these - do not skip**
-/run cmd-syntax
-/run code-validation
+/run context-cmd
+/run context-review
 
 ## Load Current Schema Index
-
 ```bash
 cmd /c node .windsurf\tools\schema-query.js --index
 ```

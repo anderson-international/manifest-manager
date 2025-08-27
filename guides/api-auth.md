@@ -11,7 +11,6 @@ Avoid: Password storage, Complex permission matrices, Development shortcuts in p
 <!-- RELATED_DOCS
 Core Patterns: api-design.md (API strategy), api-errors.md (Error handling)
 Implementation: technical-stack.md (Next.js auth), feature-requirements.md (Auth requirements)
-Security: code-critical.md (Security standards)
 -->
 
 ## Overview
