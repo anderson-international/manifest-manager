@@ -26,6 +26,11 @@ cmd /c npm run --prefix .windsurf\review review:repo -- --help
 /run context-cmd
 /run context-review
 
+## Git commit messages (required convention)
+- Use no-spaces commit messages to avoid shell/quoting issues.
+- Example: `git commit -m docs_update_ui_guidelines` (good)
+- Avoid: `git commit -m "docs: update ui guidelines"` (spaces not allowed by convention)
+
 ## Guide loader hints (choose based on task)
 - If working on API/server/auth/networking tasks: consider running `/run load-api-guides`.
 - If working on UI/React/components/hooks tasks: consider running `/run load-ui-guides`.
