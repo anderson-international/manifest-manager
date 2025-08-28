@@ -1,11 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 
-/**
- * Micro-client for Mintsoft transport & health only.
- * - Provides a preconfigured Axios instance with baseURL and headers
- * - Provides a simple health check that validates credentials
- */
-export type MintsoftConfig = {
+type MintsoftConfig = {
   baseURL?: string;
   apiKey?: string;
 };
@@ -24,7 +19,11 @@ export function createMintsoftHttp(cfg: MintsoftConfig = {}): AxiosInstance {
   return http;
 }
 
-export async function healthCheck(cfg: MintsoftConfig = {}) {
+type HealthCheckOk = { ok: true; status: number; count: number };
+type HealthCheckErr = { ok: false; status: number; error?: string };
+type HealthCheckResult = HealthCheckOk | HealthCheckErr;
+
+export async function healthCheck(cfg: MintsoftConfig = {}): Promise<HealthCheckResult> {
   const http = createMintsoftHttp(cfg);
   try {
     const res = await http.get('/api/Order/Statuses');
@@ -32,7 +31,7 @@ export async function healthCheck(cfg: MintsoftConfig = {}) {
     return { ok: true as const, status: res.status, count: data.length };
   } catch (err: any) {
     const status = err?.response?.status ?? 0;
-    const message = err?.message || 'Unknown error';
-    return { ok: false as const, status, error: message };
+    const message = typeof err?.message === 'string' ? err.message : undefined;
+    return { ok: false as const, status, ...(message ? { error: message } : {}) };
   }
 }
