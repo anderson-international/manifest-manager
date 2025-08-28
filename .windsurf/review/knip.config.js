@@ -1,31 +1,58 @@
-module.exports = {
-  entry: [
-    // Next.js runtime roots (do NOT include entire repo here)
-    'app/**/*.{ts,tsx}',
-    'pages/**/*.{ts,tsx}',
-    'next-env.d.ts',
-  ],
+// Portable dynamic Knip config for mixed Next.js + Express/Node projects.
+// Declares real entrypoints when present to avoid false-positive "unused files".
+// Keeps dead-code detection effective by avoiding blanket ignores of server/integration directories.
 
-  project: [
-    // Project-wide TypeScript with excludes
-    '**/*.{ts,tsx}',
+const fs = require('fs');
+const path = require('path');
 
-    // Excludes
-    '!node_modules/**',
-    '!.next/**',
-    '!dist/**',
-    '!build/**',
-    '!test/**',
-    '!.windsurf/**',
-  ],
+function exists(relPath) {
+  try {
+    return fs.existsSync(path.resolve(process.cwd(), relPath));
+  } catch (_) {
+    return false;
+  }
+}
 
-  // Include script-specific dependencies
-  ignore: [
-    // Intentionally left empty; prefer explicit scopes above
-  ],
+module.exports = (() => {
+  const entry = [];
 
-  // Include dependencies used by scripts
-  ignoreDependencies: [
-    // Intentionally left empty; prefer explicit scopes above
-  ]
-};
+  // Common server entrypoints
+  const serverEntrypoints = [
+    'src/server/app.ts',
+    'src/server/index.ts',
+    'src/server/app.js',
+    'src/server/index.js',
+  ].filter(exists);
+
+  if (serverEntrypoints.length) {
+    entry.push(...serverEntrypoints);
+    if (exists('src/server/routes')) {
+      entry.push('src/server/routes/**/*.ts', 'src/server/routes/**/*.js');
+    }
+  }
+
+  // Integrations that may be wired at runtime
+  if (exists('src/integrations')) {
+    entry.push('src/integrations/**/*.{ts,tsx,js,jsx}');
+  }
+
+  // Project scope across src/** (primary) and allow top-level common roots
+  const project = [
+    'src/**/*.{ts,tsx,js,jsx}',
+    'app/**/*.{ts,tsx,js,jsx}',
+    'components/**/*.{ts,tsx,js,jsx}',
+    'lib/**/*.{ts,tsx,js,jsx}',
+    'hooks/**/*.{ts,tsx,js,jsx}',
+    'types/**/*.{ts,tsx,js,jsx}',
+  ];
+
+  // Ignore non-code assets only
+  const ignore = ['views/**', 'public/**'];
+
+  return {
+    $schema: 'https://unpkg.com/knip@latest/schema.json',
+    entry,
+    project,
+    ignore,
+  };
+})();

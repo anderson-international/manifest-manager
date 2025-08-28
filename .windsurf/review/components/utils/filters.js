@@ -27,9 +27,10 @@ function getFileType(filePath) {
 function isReviewablePath(relPath) {
   try {
     const n = String(relPath || '').replace(/\\/g, '/').replace(/^\.\/+/, '');
-    if (!/^(app|components|lib|hooks|types)\//.test(n)) return false;
+    // Allow top-level or src/ prefixed common roots, plus services/repositories
+    if (!/^(?:src\/)?(?:app|components|lib|hooks|types|services|repositories)\//.test(n)) return false;
     if (/^test\//.test(n)) return false;
-    if (/^\.windsurf\//.test(n)) return false;
+    if(/^\.windsurf\//.test(n)) return false;
     if (/node_modules\//.test(n)) return false;
     if (/\.d\.ts$/i.test(n)) return false;
     if (!/\.(ts|tsx)$/i.test(n)) return false;
