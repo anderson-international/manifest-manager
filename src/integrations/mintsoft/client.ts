@@ -1,8 +1,9 @@
-import axios, { AxiosInstance } from 'axios';
+import { AxiosInstance } from 'axios';
 import { z } from 'zod';
 import { env } from '../../config/env';
 import { CourierService, MintsoftOrder, OrderStatus } from './types';
 import { logger } from '../../lib/logger';
+import { createMintsoftHttp } from '../../lib/mintsoft/client';
 
 // Orders: use a lightweight normalizer based on observed Mintsoft payload keys
 function toNumberOrNull(v: unknown): number | null {
@@ -86,13 +87,9 @@ export class MintsoftClient {
   private http: AxiosInstance;
 
   constructor() {
-    this.http = axios.create({
+    this.http = createMintsoftHttp({
       baseURL: env.MINTSOFT_API_URL,
-      headers: {
-        'Accept': 'application/json',
-        'ms-apikey': env.MINTSOFT_API_KEY,
-      },
-      timeout: 30000,
+      apiKey: env.MINTSOFT_API_KEY,
     });
   }
 

@@ -4,6 +4,7 @@ import { env } from '../config/env';
 import { logger } from '../lib/logger';
 import ordersRouter from './routes/orders';
 import manifestRouter from './routes/manifest';
+import mintsoftHealthRouter from './routes/mintsoft-health';
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static('public'));
 app.get('/', (_req: Request, res: Response) => res.redirect('/orders'));
 app.use('/', ordersRouter);
 app.use('/', manifestRouter);
+app.use('/', mintsoftHealthRouter);
 
 app.listen(env.port, () => {
   logger.info({ port: env.port }, 'Server started');
