@@ -45,7 +45,7 @@ function printUsage() {
     '  --porcelain                Auto-select changed TS/TSX files via git porcelain (if no changed files are detected, per-file analyzers are skipped but repo-wide analyzers still run)',
     '  --concurrency <n>          Limit per-file parallelism (default 8)',
     '  --jscpd-min-tokens <n>     Set JSCPD min tokens (default 50)',
-    '  --jscpd-include <dirs>     Comma-separated include roots (default: app,components,lib,hooks,types; use "." for repo)',
+    '  --jscpd-include <dirs>     Comma-separated include roots (default: app,components,lib,hooks,types and their src/* variants; use "." for repo)',
     '  --no-autofix               Disable default auto-fix of comments/console lines',
     '  --debug                    Print extra debug details; summaries always include total time',
     '  --report-all               Include all files in JSON report if report is written',
@@ -55,7 +55,7 @@ function printUsage() {
     '',
     'Default behavior:',
     '  • If no files are specified (and not in --porcelain mode), all valid TypeScript files are analyzed',
-    '    under: app/, components/, lib/, hooks/, types/ (excluding .d.ts and excluded dirs)',
+    '    under: app/, components/, lib/, hooks/, types/ and src/app|components|lib|hooks|types (excluding .d.ts and excluded dirs)',
     '  • A JSON report is always written to .windsurf/review/output/code-review-results.json.',
     '    By default it includes only violating files; use --report-all to include all analyzed files.',
     '    When no violations are found, the report contains a pass summary and guidance (results: []).',
@@ -81,7 +81,8 @@ function formatMs(ms) {
 
 // Auto-discover reviewable TS/TSX files across valid repo roots
 function discoverReviewableTypeScriptFiles() {
-  const includeRoots = ['app', 'components', 'lib', 'hooks', 'types'];
+  const includeRoots = ['app', 'components', 'lib', 'hooks', 'types',
+    'src/app', 'src/components', 'src/lib', 'src/hooks', 'src/types'];
   const excludeDirs = new Set(['node_modules', '.git', '.windsurf', 'test']);
   const out = [];
 
